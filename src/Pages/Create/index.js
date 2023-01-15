@@ -1,7 +1,6 @@
 import React from 'react'
 import Form from '../../Components/Form'
 import './styles.css'
-import { Link } from 'react-router-dom'
 
 
 const index = () => {
