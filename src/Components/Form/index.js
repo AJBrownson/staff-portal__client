@@ -41,6 +41,7 @@ const Form = (props) => {
           }
         }}
         style={{ width: '100%' }}
+        constraints={{ facingMode: 'environment' }}
       />
       <label>Name</label>
         <input 
