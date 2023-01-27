@@ -5,7 +5,7 @@ const StaffTable = (props) => {
     return (
         <tr>
             <td>
-                {props.obj.name}
+                {props.obj.data}
             </td>
             <td>
                 {props.obj.comment}

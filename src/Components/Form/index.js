@@ -26,7 +26,6 @@ const Form = (props) => {
     axios.post('https://portal-server-g4eg.onrender.com/api/staff', { data, comment, date, time })
     .then(res => {
       console.log(res.data)
-      console.log(typeof(data))
       window.alert('Sign In successful!')
     })
     .catch((err) => {
