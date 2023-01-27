@@ -30,6 +30,8 @@ const Form = (props) => {
     // This clears form input values after submission
     setData('')
     setComment('')
+    setTime(displayTime)
+    setDate(displayDate)
   };
 
   return (
