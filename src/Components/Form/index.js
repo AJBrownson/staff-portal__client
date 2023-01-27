@@ -16,28 +16,22 @@ const Form = (props) => {
   const [date, setDate] = useState(displayDate)
 
 
-  // function to convert object to JSON string
-  // const myObj = data
-  // const newData = JSON.stringify(data)
-
   const handleSubmit = (event) => {
     event.preventDefault();
     
     axios.post('https://portal-server-g4eg.onrender.com/api/staff', { data, comment, date, time })
     .then(res => {
-      console.log(res.data)
       window.alert('Sign In successful!')
     })
     .catch((err) => {
-      console.log(err)
       window.alert('An error occurred. Try again!')
     })
 
     // This clears form input values after submission
     setData('')
     setComment('')
-    setTime(displayTime)
-    setDate(displayDate)
+    // setTime(displayTime)
+    // setDate(displayDate)
   };
 
   return (
@@ -60,6 +54,7 @@ const Form = (props) => {
         <input 
           type="text" 
           value={data}
+          readonly
           onChange={(e) => setData(e.target.value)}
         />
 
