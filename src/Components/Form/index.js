@@ -30,8 +30,6 @@ const Form = (props) => {
     // This clears form input values after submission
     setData('')
     setComment('')
-    // setTime(displayTime)
-    // setDate(displayDate)
   };
 
   return (
@@ -54,7 +52,7 @@ const Form = (props) => {
         <input 
           type="text" 
           value={data}
-          readonly
+          readOnly={true}
           onChange={(e) => setData(e.target.value)}
         />
 
