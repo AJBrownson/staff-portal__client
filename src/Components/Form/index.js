@@ -17,15 +17,16 @@ const Form = (props) => {
 
 
   // function to convert object to JSON string
-  // const myObj = {data}
-  // const newData = JSON.stringify(myObj)
+  // const myObj = data
+  // const newData = JSON.stringify(data)
 
   const handleSubmit = (event) => {
     event.preventDefault();
     
-    axios.post('http://localhost:5000/api/staff', { data, comment, date, time })
+    axios.post('https://portal-server-g4eg.onrender.com/api/staff', { data, comment, date, time })
     .then(res => {
       console.log(res.data)
+      console.log(typeof(data))
       window.alert('Sign In successful!')
     })
     .catch((err) => {

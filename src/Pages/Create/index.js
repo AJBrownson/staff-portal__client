@@ -6,9 +6,6 @@ import './styles.css'
 const index = () => {
   return (
     <>
-    {/* <Link to ='/get-staff'>
-        <button>View Records</button>
-      </Link> */}
     <div className='outer-wrapper'>
       <div className='inner-wrapper'>
         <Form />

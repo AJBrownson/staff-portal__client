@@ -8,7 +8,7 @@ const Records = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/staff")
+      .get("https://portal-server-g4eg.onrender.com/api/staff")
       .then((res) => {
         setStaffMembers(res.data);
       })
