@@ -13,6 +13,6 @@ tr:nth-child(even) {
   }
   
 thead {
-    background-color: #4caf50;
-    color: white;
+    background-color: darkorange;
+    color: black;
 }

@@ -31,6 +31,7 @@ const Records = () => {
           <td>Name</td>
           <td>Comment</td>
           <td>Time</td>
+          <td>Date</td>
         </tr>
       </thead>
       <tbody>{staffTable()}</tbody>

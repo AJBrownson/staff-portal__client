@@ -6,13 +6,24 @@ import { QrReader } from 'react-qr-reader';
 
 
 const Form = (props) => {
+  const getDate = new Date()
+  const displayTime = getDate.toLocaleTimeString()
+  const displayDate = getDate.toDateString()
+
   const [data, setData] = useState('')
   const [comment, setComment] = useState('')
+  const [time, setTime] = useState(displayTime)
+  const [date, setDate] = useState(displayDate)
+
+
+  // function to convert object to JSON string
+  // const myObj = {data}
+  // const newData = JSON.stringify(myObj)
 
   const handleSubmit = (event) => {
     event.preventDefault();
     
-    axios.post('http://localhost:5000/api/staff', { data, comment })
+    axios.post('http://localhost:5000/api/staff', { data, comment, date, time })
     .then(res => {
       console.log(res.data)
       window.alert('Sign In successful!')
@@ -25,6 +36,8 @@ const Form = (props) => {
     // This clears form input values after submission
     setData('')
     setComment('')
+    setTime(displayTime)
+    setDate(displayDate)
   };
 
   return (
@@ -55,6 +68,18 @@ const Form = (props) => {
           type="text" 
           value={comment}
           onChange={(e) => setComment(e.target.value)}
+        />
+
+        <input 
+          type="hidden" 
+          value={time}
+          onChange={(e) => setTime(e.target.value)}
+        />
+
+        <input 
+          type="hidden" 
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
         />
       <div className='btn-div'>
       <input className='btn' type="submit" />

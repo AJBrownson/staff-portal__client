@@ -11,7 +11,10 @@ const StaffTable = (props) => {
                 {props.obj.comment}
             </td>
             <td>
-                {props.obj.createdAt}
+                {props.obj.time}
+            </td>
+            <td>
+                {props.obj.date}
             </td>
         </tr>
     )
