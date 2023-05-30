@@ -37,6 +37,7 @@ const Form = (props) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
+      <div className='scanning-animation'>
       <QrReader
         onResult={(result, error) => {
           if (!!result) {
@@ -50,6 +51,7 @@ const Form = (props) => {
         style={{ width: '100%' }}
         constraints={{ facingMode: 'environment' }}
       />
+      </div>
       <label>Name</label>
         <input 
           type="text" 

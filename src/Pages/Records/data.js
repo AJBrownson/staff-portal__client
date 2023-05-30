@@ -20,4 +20,4 @@ const StaffTable = (props) => {
     )
 }
 
-export default StaffTable
+export default StaffTable;
