@@ -57,7 +57,7 @@ const Form = (props) => {
             />
           </div>
         </div>
-        <div clasName='border'></div>
+       
         <label>Name</label>
         <input
           type="text"
