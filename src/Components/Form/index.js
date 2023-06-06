@@ -13,8 +13,21 @@ const Form = (props) => {
   const [time, setTime] = useState(displayTime);
   const [date, setDate] = useState(displayDate);
 
-  const [successModal, setSuccessModal] = useState(false)
-  const [errorModal, setErrorModal] = useState(false)
+  // const [successModal, setSuccessModal] = useState(false)
+  // const [errorModal, setErrorModal] = useState(false)
+
+  const SuccessModal = () => (
+    <div className="success-modal">
+      <p>Sign in successful!</p>
+    </div>
+  );
+  
+  const ErrorModal = () => (
+    <div className="error-modal">
+      <p>An error occurred. Try again</p>
+    </div>
+  );
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -27,10 +40,12 @@ const Form = (props) => {
         time,
       })
       .then((res) => {
-        window.alert("Sign In successful!");
+        // window.alert("Sign In successful!");
+        <SuccessModal />
       })
       .catch((err) => {
-        window.alert("An error occurred. Try again!");
+        // window.alert("An error occurred. Try again!");
+        <ErrorModal />
       });
 
     // This clears form input values after submission
