@@ -13,6 +13,8 @@ const Form = (props) => {
   const [time, setTime] = useState(displayTime);
   const [date, setDate] = useState(displayDate);
 
+  const [successModal, setSuccessModal] = useState(false)
+  const [errorModal, setErrorModal] = useState(false)
 
   const handleSubmit = (event) => {
     event.preventDefault();
