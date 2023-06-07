@@ -17,10 +17,9 @@ const Form = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // https://portal-server-g4eg.onrender.com/api/staff
 
     axios
-      .post("http://localhost:5000/api/staff", {
+      .post("https://portal-server-g4eg.onrender.com/api/staff", {
         data,
         comment,
         date,
