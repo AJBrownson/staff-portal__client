@@ -16,3 +16,10 @@ thead {
     background-color: darkorange;
     color: black;
 }
+
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

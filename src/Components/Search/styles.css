@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.search-input {
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    width: 300px;
+    max-width: 100px;
+}
+
+
+.search-button {
+    background: orange;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
