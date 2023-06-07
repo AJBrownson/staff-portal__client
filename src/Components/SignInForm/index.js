@@ -17,9 +17,9 @@ const SignInForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // https://portal-server-g4eg.onrender.com/api/staff
+
     axios
-      .post("http://localhost:5000/api/staff", {
+      .post("https://portal-server-g4eg.onrender.com/api/staff", {
         data,
         comment,
         date,
@@ -77,7 +77,7 @@ const SignInForm = (props) => {
         <input
           type="text"
           value={data}
-          // readOnly={true}
+          readOnly={true}
           onChange={(e) => setData(e.target.value)}
         />
 
