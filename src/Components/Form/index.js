@@ -77,7 +77,7 @@ const Form = (props) => {
         <input
           type="text"
           value={data}
-          // readOnly={true}
+          readOnly={true}
           onChange={(e) => setData(e.target.value)}
         />
 
