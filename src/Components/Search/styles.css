@@ -1,7 +1,6 @@
 .container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 
 
@@ -10,18 +9,15 @@
     font-size: 18px;
     border-radius: 5px;
     border: none;
-    width: 300px;
-    max-width: 100px;
 }
 
 
 .search-button {
-    background: orange;
+    background: darkorange;
     color: black;
+    padding: .5rem;
     border: none;
-    padding: 5px 10px;
-    margin-left: 5px;
-    font-size: 18px;
+    width: 5rem;
     border-radius: 5px;
     cursor: pointer;
 }
