@@ -4,7 +4,7 @@ import "./styles.css";
 import { QrReader } from "react-qr-reader";
 import Swal from 'sweetalert2'
 
-const Form = (props) => {
+const SignInForm = (props) => {
   const getDate = new Date();
   const displayTime = getDate.toLocaleTimeString();
   const displayDate = getDate.toDateString();
@@ -17,9 +17,9 @@ const Form = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    // https://portal-server-g4eg.onrender.com/api/staff
     axios
-      .post("https://portal-server-g4eg.onrender.com/api/staff", {
+      .post("http://localhost:5000/api/staff", {
         data,
         comment,
         date,
@@ -77,7 +77,7 @@ const Form = (props) => {
         <input
           type="text"
           value={data}
-          readOnly={true}
+          // readOnly={true}
           onChange={(e) => setData(e.target.value)}
         />
 
@@ -107,4 +107,4 @@ const Form = (props) => {
   );
 };
 
-export default Form;
+export default SignInForm;

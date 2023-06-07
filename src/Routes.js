@@ -27,7 +27,7 @@ const Routing = () => {
         <Routes>
             <Route path='/' element={ <Home /> } />
             <Route path='/add-staff' element={ <Create /> } />
-            <Route path='/get-staff' element={
+            <Route path='/staff' element={
               // <Protected loggedIn={loggedIn}>
                 <Records />
               // </Protected>

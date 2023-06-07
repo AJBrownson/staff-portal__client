@@ -1,5 +1,5 @@
 import React from 'react'
-import Form from '../../Components/Form'
+import SignInForm from '../../Components/SignInForm'
 import './styles.css'
 
 
@@ -8,7 +8,7 @@ const index = () => {
     <>
     <div className='outer-wrapper'>
       <div className='inner-wrapper'>
-        <Form />
+        <SignInForm />
       </div>
       </div>
     </>
