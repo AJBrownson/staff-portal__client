@@ -1,8 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
 // import Protected from './Pages/Protected/Protected'
 import Create from './Pages/Create/index'
-import Home from './Pages/Home/index'
-import Records from './Pages/Records/index'
+import Home from './Pages/Home'
+import Records from './Pages/Records'
+import Archive from './Pages/Archive'
 
 
 
@@ -31,6 +32,7 @@ const Routing = () => {
                 <Records />
               // </Protected>
             } />
+            <Route path='/archive' element={ <Archive /> } />
         </Routes>
     </>
   )

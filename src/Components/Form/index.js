@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "./styles.css";
 import { QrReader } from "react-qr-reader";
+import Swal from 'sweetalert2'
 
 const Form = (props) => {
   const getDate = new Date();
@@ -12,40 +13,37 @@ const Form = (props) => {
   const [comment, setComment] = useState("");
   const [time, setTime] = useState(displayTime);
   const [date, setDate] = useState(displayDate);
-
-  // const [successModal, setSuccessModal] = useState(false)
-  // const [errorModal, setErrorModal] = useState(false)
-
-  const SuccessModal = () => (
-    <div className="success-modal">
-      <p>Sign in successful!</p>
-    </div>
-  );
-  
-  const ErrorModal = () => (
-    <div className="error-modal">
-      <p>An error occurred. Try again</p>
-    </div>
-  );
   
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // https://portal-server-g4eg.onrender.com/api/staff
 
     axios
-      .post("https://portal-server-g4eg.onrender.com/api/staff", {
+      .post("http://localhost:5000/api/staff", {
         data,
         comment,
         date,
         time,
       })
       .then((res) => {
-        // window.alert("Sign In successful!");
-        <SuccessModal />
+        // popup modal for successful form submission
+        Swal.fire({
+          icon: 'success',
+          title: 'Sign in successful!',
+          showConfirmButton: false,
+          timer: 2000
+        })
       })
       .catch((err) => {
-        // window.alert("An error occurred. Try again!");
-        <ErrorModal />
+        // popup modal for unsuccessful form submission
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'An error occurred. Try again',
+          showConfirmButton: false,
+          timer: 2000
+        })
       });
 
     // This clears form input values after submission
@@ -80,7 +78,7 @@ const Form = (props) => {
         <input
           type="text"
           value={data}
-          readOnly={true}
+          // readOnly={true}
           onChange={(e) => setData(e.target.value)}
         />
 
