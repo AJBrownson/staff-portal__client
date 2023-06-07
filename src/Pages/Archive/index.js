@@ -1,17 +1,13 @@
-import React from 'react'
+import React from "react";
+import Search from "../../Components/Search";
 
 const Archive = () => {
   return (
     <>
-        <h1>Archived Files</h1>
-        <form>
-            <input
-            type='text'
-            />
-            <input type='submit' />
-        </form>
+      <h1>Archived Files</h1>
+      <Search />
     </>
-  )
-}
+  );
+};
 
-export default Archive
+export default Archive;
