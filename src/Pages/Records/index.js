@@ -24,7 +24,7 @@ const Records = () => {
   }, []);
 
   if (error) {
-    return <div>Failed to fetch data. Check your network connectivity</div>
+    return <div className="error">Failed to fetch data. Check your network connectivity</div>
   }
 
   if (loading) {
@@ -34,27 +34,10 @@ const Records = () => {
   }
 
   if (!staffMembers) return null;
-  // if (!staffMembers || staffMembers.length === 0) {
-  //   return (
-  //     <table>
-  //     <thead>
-  //       <tr>
-  //         <td>Name</td>
-  //         <td>Comment</td>
-  //         <td>Time</td>
-  //         <td>Date</td>
-  //       </tr>
-  //     </thead>
-  //     <tbody>
-  //       <p>No sign in yet</p>
-  //     </tbody>
-  //   </table>
-  //   )
-  // }
 
   const staffTable = () => {
     return staffMembers.map((data, i) => {
-      return (<StaffTable obj={data} key={i} />);
+      return <StaffTable obj={data} key={i} />;
     });
   };
   return (
