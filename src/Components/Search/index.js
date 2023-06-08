@@ -1,12 +1,22 @@
-import React from "react";
+import { useState } from "react";
 import './styles.css'
 
 
-const Search = () => {
+const Search = ({onSearch}) => {
+  const [searchItem, setSearchItem] = useState('')
+
+  const handleSearch = () => {
+    onSearch(searchItem);
+  }
   return (
     <div className='container'>
-      <input className='search-input' type="text" placeholder='Search' />
-      <button className='search-button'>Search</button>
+      <input
+       className='search-input' 
+       type="text" value={searchItem} 
+       onChange={(e) => setSearchItem(e.target.value)} 
+       placeholder='Search' 
+      />
+      <button className='search-button' onClick={handleSearch}>Search</button>
     </div>
   );
 };
