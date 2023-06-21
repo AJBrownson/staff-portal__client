@@ -1,28 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from 'axios'
 import  './styles.css'
-import Search from "../../Components/Search";
+// import Search from "../../Components/Search";
 
 
 const Archive = () => {
-  const [searchResults, setSearchResults] = useState([]);
+  const [archive, setArchive] = useState([]);
 
-  const handleSearch = async (searchItem) => {
+  useEffect(() => {
+    async function retrieveArchive() {
+      try {
+        const { data } = await axios.get("https://portal-server-g4eg.onrender.com/api/archive")
+        setArchive(data.data.archive);
+      } catch (error) {
+        console.error('Error retrieving archived records:', error);
+      }
+    }
+    retrieveArchive();
+  }, []);
+
+  const searchArchive = async (e) => {
+    const searchValue = e.target.value;
     try {
-      const response = await axios.get('http://localhost:5000/api/archive', {
-        params: { searchItem }
-      })
-      setSearchResults(response.data)
+      const { data } = await axios.get(`https://portal-server-g4eg.onrender.com/api/archive?search=${searchValue}`);
+      setArchive(data.data.archive);
     } catch (error) {
-      console.error('Error occurred during search', error)
+      console.error('Error searching archive:', error)
     }
   }
+
   return (
     <div>
       <h1>Archive</h1>
-      <Search onSearch={handleSearch} />
+      {/* <Search onSearch={handleSearch} /> */}
 
-      {searchResults.length > 0 && (
+      {searchArchive.length > 0 && (
         <table>
           <thead>
             <tr>
@@ -33,7 +45,7 @@ const Archive = () => {
             </tr>
           </thead>
           <tbody>
-            {searchResults.map((result, index) =>(
+            {searchArchive.map((result, index) => (
               <tr key={index}>
                 <td>{result.name}</td>
                 <td>{result.comment}</td>

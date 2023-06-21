@@ -25,3 +25,18 @@ thead {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+
+
+nav {
+    display: flex;
+    margin-bottom: .5rem;
+    flex-direction: row;
+    align-items: end;
+    justify-content: end;
+}
+
+
+nav button {
+    width: 5rem;
+}

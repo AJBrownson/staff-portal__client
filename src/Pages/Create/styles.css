@@ -14,3 +14,17 @@
     justify-content: center;
     align-items: center;
 }
+
+
+.button {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
+.button .floating-btn {
+    width: 2rem; /* reduce or add by 1 rem */
+    padding: .5rem; /* same here but with .5 */
+    border-radius: 50%;
+    box-shadow: 4px 8px #aaaaaa15;
+}

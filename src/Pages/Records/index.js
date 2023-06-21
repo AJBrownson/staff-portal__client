@@ -11,7 +11,7 @@ const Records = () => {
 
   useEffect(() => {
     axios
-      .get("https://portal-server-g4eg.onrender.com/api/staff")
+    .get("https://portal-server-g4eg.onrender.com/api/staff")
       .then((res) => {
         setStaffMembers(res.data);
         setLoading(false);
@@ -40,7 +40,14 @@ const Records = () => {
       return <StaffTable obj={data} key={i} />;
     });
   };
+  
   return (
+    <>
+    
+    <nav>
+      <button>Archive</button>
+    </nav>
+
     <table>
       <thead>
         <tr>
@@ -52,6 +59,7 @@ const Records = () => {
       </thead>
       <tbody>{staffTable()}</tbody>
     </table>
+    </>
   );
 };
 

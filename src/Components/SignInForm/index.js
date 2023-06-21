@@ -13,6 +13,8 @@ const SignInForm = (props) => {
   const [comment, setComment] = useState("");
   const [time, setTime] = useState(displayTime);
   const [date, setDate] = useState(displayDate);
+
+  // const [loading, setLoading] = useState(true)
   
 
   const handleSubmit = (event) => {
@@ -26,6 +28,8 @@ const SignInForm = (props) => {
         time,
       })
       .then((res) => {
+        // setLoading(false)
+
         // popup modal for successful form submission
         Swal.fire({
           icon: 'success',
@@ -35,6 +39,8 @@ const SignInForm = (props) => {
         })
       })
       .catch((err) => {
+        // setLoading(false)
+
         // popup modal for unsuccessful form submission
         Swal.fire({
           icon: 'error',
@@ -51,6 +57,10 @@ const SignInForm = (props) => {
     setTime(displayTime);
     setDate(displayDate);
   };
+
+  // if (loading) {
+  //   return <p>Loading...</p> Add sweet alert loading modal
+  // }
 
   return (
     <>
